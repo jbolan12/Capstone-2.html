@@ -6,28 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mondrian Project</title>
   <style>
-
-body {
+    body {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
       padding: 0;
+      background-color: #f0f1ec; /* Background color for better visibility */
     }
 
     .container {
-      height: 748px;
-      width: 748px;
       display: grid;
       background-color: #000;
-      grid-template-columns: 320px 198px 153px 50px;
-      grid-template-rows: 414px 130px 155px 22px;
-      gap: 9px;
+      gap: 5px; /* Reduced gap for better fitting */
+      /* Used percentages for better responsiveness */
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      grid-template-rows: auto;
+      width: 90vw; /* Responsive width */
+      max-width: 748px; /* Maximum width to maintain original design */
+      height: auto; /* Height auto to accommodate content */
     }
 
     .item {
       background-color: #F0F1EC;
+      aspect-ratio: 1; /* Maintains a square aspect ratio */
     }
 
     .red {
@@ -39,11 +42,11 @@ body {
     }
 
     .white2 {
-      grid-row: span 2;
+      grid-row: span 2; 
     }
 
     .white3 {
-      grid-area: 2 / 2 / 4 /4
+      grid-area: 2 / 2 / 4 / 4;
     }
 
     .blue {
@@ -64,20 +67,20 @@ body {
     }
 
     footer {
-      display: flex;
-      position:fixed;
-      text-align:bottom
-      background-color: #f1f1f1;
-     
+      text-align: center;
+      margin-top: 20px; /* Space above footer */
+      color: #fff; /* White text color for footer */
     }
 
+    @media (max-width: 500px) {
+      .container {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Adjusts for smaller screens */
+      }
+    }
   </style>
 </head>
 
-
 <body>
-  <!-- Write your HTML here -->
-
   <div class="container">
     <div class="item red"></div>
     <div class="item white1"></div>
@@ -92,6 +95,9 @@ body {
     <div class="item black"></div>
   </div>
 
+  <footer>
+    <p>© 2024 Stratton Oaks, Inc</p>
+  </footer>
 </body>
 
 </html>
